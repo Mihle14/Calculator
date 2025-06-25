@@ -1,0 +1,84 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+    overflow: hidden;
+}
+
+td {
+    width: 80px;
+    height: 60px;
+    text-align: center;
+    font-size: 24px;
+    cursor: pointer;
+    border: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+    user-select: none;
+}
+
+td:hover {
+    background-color: #f0f0f0;
+}
+
+input[type="text"] {
+    width: 100%;
+    height: 60px;
+    font-size: 26px;
+    text-align: right;
+    padding-right: 10px;
+    border: none;
+    background-color: #f9f9f9;
+    color: #333;
+    outline: none;
+    box-sizing: border-box;
+}
+
+tr:first-child td {
+    background-color: #e0e0e0;
+}
+
+td[colspan="4"] {
+    background-color: #4caf50;
+    color: white;
+    font-weight: bold;
+    font-size: 28px;
+}
+
+td[colspan="2"] {
+    font-weight: bold;
+}
+
+td:active {
+    background-color: #ccc;
+}
+
+td:last-child {
+    background-color: #ff9800;
+    color: white;
+    font-weight: bold;
+}
+
+td:last-child:hover {
+    background-color: #fb8c00;
+}
+
+td:nth-child(4) {
+    background-color: #2196f3;
+    color: white;
+    font-weight: bold;
+}
+
+td:nth-child(4):hover {
+    background-color: #1976d2;
+}

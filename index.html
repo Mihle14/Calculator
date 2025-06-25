@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <table border="1">
+            <tr>
+                <td colspan="4">
+                    <input type = "text" id="inputbox" value="0"/>
+                </td>
+                <tr>
+                    <td onclick="Buttons(7)">7</td>
+                    <td onclick="Buttons(8)">8</td>
+                    <td onclick="Buttons(9)">9</td>
+                    <td onclick="operationBtn('x')">x</td>
+                </tr>
+                <tr>
+                    <td onclick="Buttons(4)">4</td>
+                    <td onclick="Buttons(5)">5</td>
+                    <td onclick="Buttons(6)">6</td>
+                    <td onclick="operationBtn('-')">-</td>
+                </tr>
+                <tr>
+                    <td onclick="Buttons(1)">1</td>
+                    <td onclick="Buttons(2)">2</td>
+                    <td onclick="Buttons(3)">3</td>
+                    <td onclick="operationBtn('+')">+</td>
+                </tr>
+                <tr>
+                    <td colspan="2" onclick="Buttons(0)">0</td>
+                    <td onclick="clearDisplay()">AC</td>
+                    <td onclick="operationBtn('/')">/</td>
+                </tr>
+                <tr>
+                    <td colspan="4" onclick="EqualOperator()">=</td>
+                </tr>
+                
+            </tr>
+
+        </table>
+
+        <script>
+
+            var moveZero = true;
+            var value1;
+            var Operator;
+
+            function Buttons(button){
+
+                if(moveZero){
+                    document.getElementById("inputbox").value = button;
+                    moveZero = false;
+                }else{
+                    var currentValue = document.getElementById("inputbox").value;
+                    document.getElementById("inputbox").value = currentValue + button;
+                }
+            }
+
+            function clearDisplay(){
+                document.getElementById("inputbox").value = 0;
+                moveZero = true;
+            }
+
+            function operationBtn(operator){
+                Operator = operator
+                value1 = parseInt(document.getElementById("inputbox").value)
+                moveZero = true;
+            }
+
+            function EqualOperator(){
+                var value2 = parseInt(document.getElementById("inputbox").value)
+                var finalTotal;
+
+                switch(Operator){
+                    case "+":
+                        finalTotal = value1 + value2;
+                        break;
+                    case "-":
+                        finalTotal = value1 - value2;
+                        break;
+                    case "/":
+                        finalTotal = value1 / value2;
+                        break;
+                    case "x":
+                        finalTotal = value1 * value2;
+                        break;
+                }
+                document.getElementById("inputbox").value = finalTotal;
+
+                value1 = 0
+                moveZero = true;
+            }
+        </script>
+    </body>
+</html>
